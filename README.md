@@ -98,13 +98,13 @@ SSH into the control node and follow the steps below:
 
 --Filebeat--
 
-- Copy the ![filebeat-config.yml](filebeat-config.yml) file to /etc/ansible/files/
+- Copy the ![filebeat-config.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/filebeat-config.yml) file to /etc/ansible/files/
 - Update the filebeat-config.yml file to include the IP Address of the ELK-VM 10.1.0.4:9200
 - Run the playbook, and navigate to http://13.76.84.215:5601/app/kibana to check that the installation worked as expected.
 
 --Metricbeat---
 
-- Copy the ![metricbeat-config.yml](metricbeat-config.yml) file to /etc/ansible/files/
+- Copy the ![metricbeat-config.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/metricbeat-config.yml) file to /etc/ansible/files/
 - Update the metricbeat-config.yml file to include the IP Address of the ELK-VM 10.1.0.4:9200
 - Run the playbook, and navigate to http://13.76.84.215:5601/app/kibana to check that the installation worked as expected.
 
