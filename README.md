@@ -6,9 +6,9 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
-  ![https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/filebeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/filebeat-playbook.yml)
+  ![filebeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/filebeat-playbook.yml)
   
-  ![https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/metricbeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/metricbeat-playbook.yml)
+  ![metricbeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/metricbeat-playbook.yml)
 
 This document contains the following details:
 - Description of the Topologu
@@ -73,7 +73,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![Documents/BootcampCybersecurity/Homework/Project-1/ELK-Screenshot.png](ELK-Screenshot.png)
+![ELK-Screenshot.png](ELK-Screenshot.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
