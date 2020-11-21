@@ -100,6 +100,7 @@ SSH into the control node and follow the steps below:
 
 - Copy the deb Filebeat config file from Kibana with curl -L -O https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-config.yml
 - Update the filebeat-config.yml file to include the following 
+
 ![update-filebeat-config.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/update-filebeat-config.png)
   
 - Run the playbook, and navigate to http://13.76.84.215:5601/app/kibana to check that the installation worked as expected.
