@@ -103,7 +103,7 @@ SSH into the control node and follow the steps below:
 
 ![update-filebeat-config.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/update-filebeat-config.png)
   
-- Run the playbook, and navigate to http://13.76.84.215:5601/app/kibana to check that the installation worked as expected.
+- Run the playbook (ansible-playbook filebeat-playbook.yml), and navigate to http://13.76.84.215:5601/app/kibana > Add Logs:Add log data > System Logs > 5: Module status to check that the installation worked as expected.
 - Which file is the playbook? ![filebeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/filebeat-playbook.yml)
 - Where do you copy it? Copy it from your jopbox /etc/ansible/files/filebeat-config.yml to the Web-1 & Web-2 file /etc/filebeat/filebeat.yml
 - Which file do you update to make Ansible run the playbook on a specific machine? Update /etc/ansible/hosts
@@ -117,7 +117,7 @@ SSH into the control node and follow the steps below:
 
 ![update-metricbeat-config.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/update-metricbeat-config.png)
   
-- Run the playbook, and navigate to http://13.76.84.215:5601/app/kibana to check that the installation worked as expected.
+- Run the playbook (ansible-playbook metricbeat-playbook.yml), and navigate to http://13.76.84.215:5601/app/kibana > to check that the installation worked as expected.
 - Which file is the playbook? ![metricbeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/metricbeat-playbook.yml)
 - Where do you copy it? Copy it from your jopbox /etc/ansible/files/metricbeat-config.yml to the Web-1 & Web-2 file /etc/metricbeat/metricbeat.yml
 - Which file do you update to make Ansible run the playbook on a specific machine? Update /etc/ansible/hosts 
