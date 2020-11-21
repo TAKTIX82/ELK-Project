@@ -102,7 +102,10 @@ SSH into the control node and follow the steps below:
 - Update the filebeat-config.yml file to include the IP Address of the ELK-VM 10.1.0.4:9200
 - Run the playbook, and navigate to http://13.76.84.215:5601/app/kibana to check that the installation worked as expected.
 - Which file is the playbook? ![filebeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/filebeat-playbook.yml)
-- Where do you copy it? /etc/ansible/roles/
+- Where do you copy it? Copy it from your jopbox /etc/ansible/files/filebeat-config.yml to the Web-1 & Web-2 file /etc/filebeat/filebeat.yml
+- Which file do you update to make Ansible run the playbook on a specific machine? Update /etc/ansible/hosts
+- How do I specify which machine to install the ELK server on versus which to install Filebeat on? Update the array in /etc/ansible/hosts file to have Web-1 & Web-2 VMs under a title/heading of [webservers] and have the ELK stack under a title/heading of [ELK-server]
+- Which URL do you navigate to in order to check that the ELK server is running? http://13.76.84.215:5601/app/kibana
 
 --Metricbeat---
 
@@ -110,10 +113,7 @@ SSH into the control node and follow the steps below:
 - Update the metricbeat-config.yml file to include the IP Address of the ELK-VM 10.1.0.4:9200
 - Run the playbook, and navigate to http://13.76.84.215:5601/app/kibana to check that the installation worked as expected.
 - Which file is the playbook? ![metricbeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/metricbeat-playbook.yml)
-- Where do you copy it? /etc/ansible/roles/
-
-
-
+- Where do you copy it? Copy it from your jopbox /etc/ansible/files/metricbeat-config.yml to the Web-1 & Web-2 file /etc/metricbeat/metricbeat.yml
 - Which file do you update to make Ansible run the playbook on a specific machine? Update /etc/ansible/hosts 
-- How do I specify which machine to install the ELK server on versus which to install Filebeat on? Update the array in /etc/ansible/hosts file to have Web-1 & Web-2 VMs under a title/heading of [webservers] and have the ELK stack under a title/heading of [ELK-server].
+- How do I specify which machine to install the ELK server on versus which to install Filebeat on? Update the array in /etc/ansible/hosts file to have Web-1 & Web-2 VMs under a title/heading of [webservers] and have the ELK stack under a title/heading of [ELK-server]
 - Which URL do you navigate to in order to check that the ELK server is running? http://13.76.84.215:5601/app/kibana
