@@ -114,7 +114,8 @@ SSH into the control node and follow the steps below:
 
 - Copy the deb Metricbeat config file from Kibana with curl -L -O https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat > /etc/ansible/files/metricbeat-config.yml
 - Update the filebeat-config.yml file to include the following
-[update-metricbeat-config.png]()
+
+![update-metricbeat-config.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/update-metricbeat-config.png)
   
 - Run the playbook, and navigate to http://13.76.84.215:5601/app/kibana to check that the installation worked as expected.
 - Which file is the playbook? ![metricbeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/metricbeat-playbook.yml)
