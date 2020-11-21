@@ -19,7 +19,7 @@ This document contains the following details:
 - How to Use the Ansible Build
 
 
-### Description of the Topology
+### Description of the Topology:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Dmn Vulnerable Web Application.
 
@@ -40,7 +40,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Web-2    | Server   | 10.0.0.10(Private)                         | Linux            |
 | ELK-VM   | Server   | 13.76.84.215(Public)/10.1.0.4(Private)     | Linux            |
 
-### Access Policies
+### Access Policies:
 
 The machines on the internal network are not exposed to the public Internet. 
 
@@ -59,7 +59,7 @@ A summary of the access policies in place can be found in the table below.
 | Web-2    | No                  | 10.0.0.4             |
 | ELK-VM   | No                  | 10.0.0.4             |
 
-### Elk Configuration
+### Elk Configuration:
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - The main benefit of Ansible is to allows IT admins to automate the setup of multiple machines with one file.
@@ -75,7 +75,7 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ![ELK-Screenshot.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/ELK-Screenshot.png)
 
-### Target Machines & Beats
+### Target Machines & Beats:
 This ELK server is configured to monitor the following machines:
 - Web-1 VM 10.0.0.8 (Private)
 - Web-2 VM 10.0.0.10 (Private)
@@ -91,7 +91,7 @@ These Beats allow us to collect the following information from each machine:
 - Examples of what metrics and statistics it collects from is Apache, HAProxy, MongoDB, MySQL, Nginx, PostgreSQL, Redis, System and Zookeeper
 
 
-### Using the Playbook
+### Using the Playbook:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
@@ -113,13 +113,15 @@ SSH into the control node and follow the steps below:
 --Metricbeat---
 
 - Copy the deb Metricbeat config file from Kibana with curl -L -O https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat > /etc/ansible/files/metricbeat-config.yml
-- Update the filebeat-config.yml file to include the following
+- Update the metricbeat-config.yml file to include the following
 
 ![update-metricbeat-config.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/update-metricbeat-config.png)
   
-- Run the playbook (ansible-playbook metricbeat-playbook.yml), and navigate to http://13.76.84.215:5601/app/kibana > to check that the installation worked as expected.
+- Run the playbook (ansible-playbook metricbeat-playbook.yml), and navigate to http://13.76.84.215:5601/app/kibana > Metrics:Add metric data > Docker metrics > 5:Module statusto check that the installation worked as expected.
 - Which file is the playbook? ![metricbeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/metricbeat-playbook.yml)
 - Where do you copy it? Copy it from your jopbox /etc/ansible/files/metricbeat-config.yml to the Web-1 & Web-2 file /etc/metricbeat/metricbeat.yml
 - Which file do you update to make Ansible run the playbook on a specific machine? Update /etc/ansible/hosts 
 - How do I specify which machine to install the ELK server on versus which to install Filebeat on? Update the array in /etc/ansible/hosts file to have Web-1 & Web-2 VMs under a title/heading of [webservers] and have the ELK stack under a title/heading of [ELK-server]
 - Which URL do you navigate to in order to check that the ELK server is running? http://13.76.84.215:5601/app/kibana
+
+### Bonus: 
