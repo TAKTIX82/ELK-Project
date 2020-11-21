@@ -101,7 +101,7 @@ SSH into the control node and follow the steps below:
 - Copy the ![filebeat-config.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/filebeat-config.yml) file to /etc/ansible/files/
 - Update the filebeat-config.yml file to include the IP Address of the ELK-VM 10.1.0.4:9200
 - Run the playbook, and navigate to http://13.76.84.215:5601/app/kibana to check that the installation worked as expected.
-- Which file is the playbook? ![filebeat-config.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/filebeat-config.yml)
+- Which file is the playbook? ![filebeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/filebeat-playbook.yml)
 - Where do you copy it? /etc/ansible/roles/
 
 --Metricbeat---
@@ -109,7 +109,7 @@ SSH into the control node and follow the steps below:
 - Copy the ![metricbeat-config.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/metricbeat-config.yml) file to /etc/ansible/files/
 - Update the metricbeat-config.yml file to include the IP Address of the ELK-VM 10.1.0.4:9200
 - Run the playbook, and navigate to http://13.76.84.215:5601/app/kibana to check that the installation worked as expected.
-- Which file is the playbook? ![metricbeat-config.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/metricbeat-config.yml)
+- Which file is the playbook? ![metricbeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/metricbeat-playbook.yml)
 - Where do you copy it? /etc/ansible/roles/
 
 
