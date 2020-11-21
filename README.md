@@ -82,8 +82,8 @@ This ELK server is configured to monitor the following machines:
 - Web-2 VM 10.0.0.10 (Private)
 
 We have installed the following Beats on these machines:
-![Filebeat-Screenshot.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/Filebeat-Screenshot.png)
-![Metricbeat-Screenshot.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/Metricbeat-Screenshot.png)
+- Filebeat
+- Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - Filebeat is used to collect log files from the 2 specified VM's Web-1 and Web-2
