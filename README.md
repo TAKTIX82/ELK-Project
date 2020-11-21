@@ -132,11 +132,15 @@ SSH into your Jump-Box-Provisioner and follow the steps below:
 - sudo docker ps -a
 - sudo docker start <docker-container-name>
 - sudo docker attached <docker-container-name>
-3. Update your /etc/ansible/hosts to separate your ELK server from the webservers ![Ansible-hosts-file.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/Ansible-hosts-file.png)
+3. Update your /etc/ansible/hosts to separate your ELK server from the webservers 
+  
+  ![Ansible-hosts-file.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/Ansible-hosts-file.png)
+  
 4. Configure your ELK Stack VM with a yaml file that looks like this (nano ELK-Stack.yml) ![ELK-Stack.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/ELK-Stack.yml)
 5. Create your ELK Stack on your VM from your Jump-Box-Provisioner running the following command ansible-playbook ELK-Stack.yml It should look like this
 
 ![ELK-Stack.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/ELK-Stack-Screenshot.png)
+
 6. Now we need to configure our Web-1 & Web-2 VM's with Filebeat and Metricbeat to send the data to our ELK Stack VM.
 7. Download the configuration files for both running the following commands in your ansible container
 - curl -L -O https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-config.yml
@@ -146,6 +150,7 @@ SSH into your Jump-Box-Provisioner and follow the steps below:
  - nano /etc/ansible/files/metricbeat-config.yml
  
    ![update-filebeat-config.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/update-filebeat-config.png)
+   
 9. Now we need to create a Filebeat & Metricbeat playbook to configure both Web-1 & Web-2 Vm'send
 - nano filebeat-playbook.yml which looks like this ![etc/ansible/roles/filebeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/filebeat-playbook.yml)
 - nano metricbeat-playbook.yml which looks like this ![etc/ansible/roles/metricbeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/metricbeat-playbook.yml)
@@ -154,10 +159,12 @@ SSH into your Jump-Box-Provisioner and follow the steps below:
 Once this has been run navigate to http://13.76.84.215:5601/app/kibana > Add Logs:Add log data > System Logs > 5: Module status, you should get the following screen when you click Check data
 
   ![Filebeat-Screenshot1.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/Filebeat-Screenshot1.png)
+  
 - ansible-playbook etc/ansible/roles/metricbeat-playbook.yml
 Once this has been run navigate to http://13.76.84.215:5601/app/kibana > Metrics:Add metric data > Docker metrics > 5:Module status, you should get the following screen when you click Check data
 
   ![Metricbeat-Screenshot1.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/Metricbeat-Screenshot1.png)
+  
 11. Since we have configured our Web-1 & Web-2 VM's we need to check that the data is being transferred to our ELK-VM, we need to navigate to http://13.76.84.215:5601/app/kibana > Discover
 
   ![Kibana-Discover.png](https://github.com/TAKTIX82/ELK-Project/blob/main/Images/Kibana-Discover.png)
