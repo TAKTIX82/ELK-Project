@@ -100,15 +100,7 @@ SSH into the control node and follow the steps below:
 
 - Copy the deb Filebeat config file from Kibana with curl -L -O https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-config.yml
 - Update the filebeat-config.yml file to include the following 
-
-output.elasticsearch:
-  #Array of hosts to connect to.
- hosts: ["10.1.0.4:9200"]
-  username: "elastic"
-  password: "changeme” 
-
- setup.kibana:
-  host: "10.1.0.4:5601"
+[update-filebeat-config.png]()
   
 - Run the playbook, and navigate to http://13.76.84.215:5601/app/kibana to check that the installation worked as expected.
 - Which file is the playbook? ![filebeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/filebeat-playbook.yml)
@@ -121,15 +113,7 @@ output.elasticsearch:
 
 - Copy the deb Metricbeat config file from Kibana with curl -L -O https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat > /etc/ansible/files/metricbeat-config.yml
 - Update the filebeat-config.yml file to include the following
-
-output.elasticsearch:
-#Array of hosts to connect to.
-hosts: ["10.1.0.4:9200"]
-  username: "elastic"
-  password: "changeme"
-
-setup.kibana:
-  host: "10.1.0.4:5601"
+[update-metricbeat-config.png]()
   
 - Run the playbook, and navigate to http://13.76.84.215:5601/app/kibana to check that the installation worked as expected.
 - Which file is the playbook? ![metricbeat-playbook.yml](https://github.com/TAKTIX82/ELK-Project/blob/main/Ansible/metricbeat-playbook.yml)
